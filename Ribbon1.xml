@@ -1,13 +1,11 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<customUI xmlns="http://schemas.microsoft.com/office/2009/07/customui" onLoad="Ribbon_Load">
-  <ribbon>
-    <tabs>
-      <tab idMso="TabAddIns">
-        <group id="MyGroup"
-               label="My Group">
-        </group>
-      </tab>
-    </tabs>
-  </ribbon>
+﻿<customUI xmlns="http://schemas.microsoft.com/office/2009/07/customui">
+	<ribbon>
+		<tabs>
+			<tab id="CustomTab" label="易知">
+				<group id="CustomGroup" label="易知">
+					<button id="ShowTaskPaneButton" getImage="GetImage" size="large"  label="点击聊天" onAction="ShowTaskPaneButton_Click" />
+				</group>
+			</tab>
+		</tabs>
+	</ribbon>
 </customUI>
-

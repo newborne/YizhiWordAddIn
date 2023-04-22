@@ -1,10 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿
+using Microsoft.Office.Core;
+using Microsoft.Office.Tools;
+using System;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
-using System.Text;
+using System.Windows.Forms.Integration;
 using Office = Microsoft.Office.Core;
 
 // TODO:   按照以下步骤启用功能区(XML)项:
@@ -35,6 +38,7 @@ namespace YizhiWordAddIn
 
         public Ribbon1()
         {
+
         }
 
         #region IRibbonExtensibility 成员
@@ -53,6 +57,39 @@ namespace YizhiWordAddIn
         {
             this.ribbon = ribbonUI;
         }
+        public Bitmap GetImage(IRibbonControl control)
+        {
+            return new Bitmap(Properties.Resources.logo_filled);
+
+        }
+        public void ShowTaskPaneButton_Click(Office.IRibbonControl control)
+        {
+            // 获取当前文档的所有任务窗格
+            CustomTaskPaneCollection taskPanes = Globals.ThisAddIn.CustomTaskPanes;
+
+            // 查找名为 "易知" 的任务窗格
+            Microsoft.Office.Tools.CustomTaskPane myTaskPane = taskPanes.FirstOrDefault(c => c.Title == "易知");
+
+            // 如果任务窗格未创建，创建新的任务窗格并显示
+            if (myTaskPane == null)
+            {
+                //引入winformUserControl
+                WinFormUserControl hello = new WinFormUserControl();
+                myTaskPane = taskPanes.Add(hello, "易知");
+
+                myTaskPane.Width = 520;
+                myTaskPane.Visible = true;
+                
+                
+
+            }
+            // 如果任务窗格已创建，切换可见性
+            else
+            {
+                myTaskPane.Visible = !myTaskPane.Visible;
+            }
+        }
+
 
         #endregion
 
