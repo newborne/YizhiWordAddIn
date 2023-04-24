@@ -18,7 +18,7 @@
         </DockPanel>-->
 
         <wv2:WebView2 Name="webView"
-                  Source="https://bing.com"
+                  Source="https://github.com/newborne"
         />
     </DockPanel>
 </UserControl>
