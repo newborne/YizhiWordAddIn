@@ -210,9 +210,6 @@
     <Compile Include="WinFormUserControl.Designer.cs">
       <DependentUpon>WinFormUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="WpfUserControl - example.xaml.cs">
-      <DependentUpon>WpfUserControl - example.xaml</DependentUpon>
-    </Compile>
     <Compile Include="WpfUserControl.xaml.cs">
       <DependentUpon>WpfUserControl.xaml</DependentUpon>
     </Compile>
@@ -705,10 +702,6 @@
     <TypeScriptCompile Include="Scripts\Office\1\office.d.ts" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="WpfUserControl - example.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="WpfUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
