@@ -18,7 +18,7 @@
         </DockPanel>-->
 
         <wv2:WebView2 Name="webView"
-                  Source="https://github.com/newborne"
+                  Source="https://magical-licorice-8a4ff5.netlify.app/#/chat"
         />
     </DockPanel>
 </UserControl>
